@@ -1,0 +1,19 @@
+version: '3.8'  # O puedes usar otra versión compatible con tu Docker
+
+services:
+  mysql-db:
+    image: mysql:8.0
+    container_name: mysql_container2
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: ejemplo_root_pass
+      MYSQL_DATABASE: abonaris
+      # ✅ Ya no pongas MYSQL_USER ni MYSQL_PASSWORD para el usuario root
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:
+
