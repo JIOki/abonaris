@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import { env } from 'process';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { SrcModule } from './modules/admin/users/src/src.module';
 
 @Module({
   imports: [ConfigModule.forRoot({
@@ -21,16 +22,19 @@ import { TypeOrmModule } from '@nestjs/typeorm';
     entities: [], // Adjust the path to your entities
     //autoLoadEntities: true,
     synchronize: false, // Set to false in production*/
-    type: 'mysql',
-    host: 'localhost',
-    port: 3306,
-    username: 'root',
-    password: '',
-    database: 'data_test',
-    entities: [],
-    synchronize: true,
+      type: 'mysql',
+      host: 'localhost',
+      port: 3306,
+      username: 'root',
+      password: '',
+      database: 'data_test',
+      entities: [], // tus entidades aquí
+      synchronize: true,
+     
 
-  })
+
+  }),
+  SrcModule
 ],
   
 

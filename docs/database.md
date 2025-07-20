@@ -27,3 +27,7 @@
 '''
 
 se procede a configurar 
+se agrega en app.module 
+        TypeOrmModule.forRoot({ 
+    
+  })
